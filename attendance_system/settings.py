@@ -214,6 +214,7 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.FormParser',
         'rest_framework.parsers.MultiPartParser',
     ],
+    'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
 
 # JWT Settings
@@ -232,6 +233,12 @@ SIMPLE_JWT = {
     'USER_ID_CLAIM': 'user_id',
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
     'TOKEN_TYPE_CLAIM': 'token_type',
+    # Additional settings for better compatibility
+    'AUTH_TOKEN_CLASS': 'rest_framework_simplejwt.tokens.AccessToken',
+    'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
+    # Debug settings
+    'AUTH_HEADER_TYPE': 'Bearer',
+    'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
 }
 
 

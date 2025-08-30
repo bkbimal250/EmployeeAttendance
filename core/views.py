@@ -641,6 +641,20 @@ class CustomUserViewSet(viewsets.ModelViewSet):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    @action(detail=False, methods=['get'])
+    def debug_auth(self, request):
+        """Debug endpoint to test authentication"""
+        return Response({
+            'authenticated': request.user.is_authenticated,
+            'user_id': str(request.user.id) if request.user.is_authenticated else None,
+            'username': request.user.username if request.user.is_authenticated else None,
+            'role': request.user.role if request.user.is_authenticated else None,
+            'auth_header': request.headers.get('Authorization'),
+            'http_auth_header': request.META.get('HTTP_AUTHORIZATION'),
+            'all_headers': dict(request.headers),
+            'all_meta': {k: v for k, v in request.META.items() if k.startswith('HTTP_')}
+        })
+
     @action(detail=False, methods=['post'])
     def change_password(self, request):
         """Change user password"""
