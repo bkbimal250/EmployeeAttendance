@@ -227,6 +227,11 @@ SIMPLE_JWT = {
     # Additional settings for better compatibility
     'AUTH_TOKEN_CLASS': 'rest_framework_simplejwt.tokens.AccessToken',
     'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
+<<<<<<< HEAD
+=======
+    # Debug settings
+    #'AUTH_HEADER_TYPE': 'Bearer',
+>>>>>>> 69958f7 (code commit)
     'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
 }
 
