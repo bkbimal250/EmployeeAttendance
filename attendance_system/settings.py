@@ -14,6 +14,10 @@ from pathlib import Path
 import os
 from datetime import timedelta
 import pymysql
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Configure PyMySQL
 pymysql.install_as_MySQLdb()
