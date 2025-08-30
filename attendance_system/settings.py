@@ -224,6 +224,8 @@ SIMPLE_JWT = {
     'USER_ID_CLAIM': 'user_id',
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
     'TOKEN_TYPE_CLAIM': 'token_type',
+    # Additional settings for better compatibility
+    'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
     'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
 }
 
@@ -374,4 +376,3 @@ CELERY_TIMEZONE = TIME_ZONE
 
 # Create logs directory if it doesn't exist
 os.makedirs(BASE_DIR / 'logs', exist_ok=True)
-
