@@ -38,17 +38,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-eg&hkh!w@e(%wx6aztj4+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = not IS_PRODUCTION
 
-# Production settings
-if IS_PRODUCTION:
-    ALLOWED_HOSTS = [
-        'company.d0s369.co.in',
-        'www.company.d0s369.co.in',
-        '193.203.184.215',
-        'localhost',
-        '127.0.0.1',
-    ]
-else:
-    ALLOWED_HOSTS = ['*']
+# Allow all hosts for testing
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -236,60 +227,32 @@ SIMPLE_JWT = {
     # Additional settings for better compatibility
     'AUTH_TOKEN_CLASS': 'rest_framework_simplejwt.tokens.AccessToken',
     'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
-    # Debug settings
-    'AUTH_HEADER_TYPE': 'Bearer',
     'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
 }
 
 
-# CORS Settings - Production ready
-if IS_PRODUCTION:
-    CORS_ALLOWED_ORIGINS = [
-        "https://company.d0s369.co.in",
-        "https://www.company.d0s369.co.in",
-        "https://manager.company.d0s369.co.in",
-        "https://employee.company.d0s369.co.in",
-        "https://admin.company.d0s369.co.in",
-    ]
-    
-    # Additional CORS settings for production
-    CORS_ALLOW_CREDENTIALS = True
-    CORS_ALLOW_METHODS = [
-        'DELETE',
-        'GET',
-        'OPTIONS',
-        'PATCH',
-        'POST',
-        'PUT',
-    ]
-    CORS_ALLOW_HEADERS = [
-        'accept',
-        'accept-encoding',
-        'authorization',
-        'content-type',
-        'dnt',
-        'origin',
-        'user-agent',
-        'x-csrftoken',
-        'x-requested-with',
-    ]
-else:
-    # Development CORS settings
-    CORS_ALLOWED_ORIGINS = [
-        "http://localhost:3000",
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://localhost:5175",
-        "http://localhost:5176",
-        "http://localhost:5177",
-        "http://localhost:5178",
-        "http://localhost:5179",
-        "http://localhost:5180",
-        "http://localhost:5181",
-        "http://localhost:5182",
-        "http://localhost:5183",
-    ]
-    CORS_ALLOW_CREDENTIALS = True
+# CORS Settings - Allow all for testing
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 # Security Settings for Production
 # Security Settings for Production
