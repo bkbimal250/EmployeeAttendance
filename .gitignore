@@ -197,6 +197,16 @@ quick_*.py
 reset_*.py
 setup_*.py
 sync_*.py
+add_*.py
+create_*.py
+run_*.py
+complete_*.py
+fix_*.py
+manage_*.py
+debug_*.py
+clean_*.py
+deploy_*.py
+push_*.py
 
 # Windows batch files and PowerShell scripts
 *.bat

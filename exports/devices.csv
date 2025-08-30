@@ -1,4 +1,0 @@
-Device ID,Device Name,Device Type,IP Address,Port,Serial Number,Location,Office,Status,Last Sync,Firmware Version,Device Status,Sync Interval,Created At,Updated At
-d1330f38-9bf4-4e64-bffb-4899354cb94b,AceTrack,zkteco,192.168.200.150,4370,,Sanpada Navi Mumbai,AceTrack Office,Active,,,online,5,2025-08-25 13:19:42,2025-08-25 13:28:01
-e6181392-3570-479a-9971-3fd6da803963,Bootcamp,zkteco,192.168.150.74,4370,,Belapur Navi Mumbai,Bootcamp Office,Active,,,online,5,2025-08-25 13:19:42,2025-08-25 13:27:10
-6e2b80de-c856-4d83-a929-2a84649489f4,DOS Attendance,zkteco,192.168.200.64,4370,,Sanpada Navi Mumbai,DOS Office,Active,,,online,5,2025-08-25 13:19:42,2025-08-25 13:24:55
