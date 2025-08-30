@@ -1964,3 +1964,24 @@ class DashboardViewSet(viewsets.ViewSet):
         
         serializer = DashboardStatsSerializer(stats)
         return Response(serializer.data)
+
+
+# Custom error handlers for production
+def custom_404(request, exception=None):
+    """Custom 404 error handler"""
+    from django.http import JsonResponse
+    return JsonResponse({
+        'error': 'Not Found',
+        'message': 'The requested resource was not found',
+        'status_code': 404
+    }, status=404)
+
+
+def custom_500(request):
+    """Custom 500 error handler"""
+    from django.http import JsonResponse
+    return JsonResponse({
+        'error': 'Internal Server Error',
+        'message': 'An internal server error occurred',
+        'status_code': 500
+    }, status=500)
