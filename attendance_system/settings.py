@@ -225,7 +225,7 @@ SIMPLE_JWT = {
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',),
     'TOKEN_TYPE_CLAIM': 'token_type',
     # Additional settings for better compatibility
-    'AUTH_TOKEN_CLASS': 'rest_framework_simplejwt.tokens.AccessToken',
+    #'AUTH_TOKEN_CLASS': 'rest_framework_simplejwt.tokens.AccessToken',
     'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
 <<<<<<< HEAD
 =======
